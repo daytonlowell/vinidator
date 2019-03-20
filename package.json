@@ -1,0 +1,19 @@
+{
+  "name": "vin-validator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js | faucet"
+  },
+  "author": "daytonlowell",
+  "license": "WTFPL",
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "tape": "^4.10.1",
+    "tape-catch": "^1.0.6"
+  },
+  "bugs": {
+    "url": "https://github.com/daytonlowell/vin-validator/issues"
+  }
+}

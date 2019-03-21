@@ -6,6 +6,14 @@
   "scripts": {
     "test": "tape test.js | faucet"
   },
+  "keywords": [
+    "vin", 
+    "validate",
+    "validator",
+    "vehicle",
+    "identification",
+    "number"
+  ],
   "author": "daytonlowell",
   "license": "WTFPL",
   "devDependencies": {

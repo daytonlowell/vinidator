@@ -1,8 +1,10 @@
 # vin-validator
 
 ```js
-const { validateSync } = require('vin-validator')
+const { validate, validateAndThrowOnInvalid } = require('vin-validator')
 
-validateSync('1HTMMAANX4H670946') //{ isValid: true, code: 'SUCCESS', message: 'VIN decoded successfully' }
+validate('1HTMMAANX4H670946') // { isValid: true, code: 'SUCCESS', message: 'VIN decoded successfully' }
+
+validateAndThrowOnInvalid('1m2k195c51m017395') // throws
 
 ```

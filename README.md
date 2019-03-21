@@ -1,4 +1,4 @@
-# vin-validator
+# vinidator
 
 ```js
 const { validate, validateAndThrowOnInvalid } = require('vin-validator')

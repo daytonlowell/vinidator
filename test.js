@@ -33,8 +33,6 @@ test('valid vins return success', t => {
 	t.deepEqual(validate('1HSZDGFR5JH548838'), success)
 	t.deepEqual(validate('2HSCUAPR59C081683'), success)
 	t.deepEqual(validate('5VCACLLE6BH212929'), success)
-	t.deepEqual(validate('5VCACLLE6BH212929'), success)
-	t.deepEqual(validate('5VCACLLE6BH212929'), success)
 	t.deepEqual(validate('1fvmbga823hk75033'), success)
 	t.deepEqual(validate('1HTSDAAN3XH634866'), success)
 	t.deepEqual(validate('JHBSG2213G1S10058'), success)
@@ -50,6 +48,7 @@ test('valid vins return success', t => {
 
 test('X checksum character is handled', t => {
 	t.deepEqual(validate('1M8GDM9AXKP042788'), success)
+	t.doesNotThrow(() => validateAndThrowOnInvalid('1M8GDM9AXKP042788'), success)
 
 	t.end()
 })

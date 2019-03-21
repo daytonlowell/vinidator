@@ -38,7 +38,7 @@ function checkChecksum(value, checksumCharacter) {
 }
 
 function validate(vin) {
-	let code = 'SUCCESS'
+	let code = SUCCESS_CODE
 	let value = []
 
 	vin = vin.toUpperCase().split('')
@@ -49,7 +49,7 @@ function validate(vin) {
 		code = e
 	}
 
-	if (code !== 'SUCCESS') {
+	if (code !== SUCCESS_CODE) {
 		return validationCodes[code]
 	}
 

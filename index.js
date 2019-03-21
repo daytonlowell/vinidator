@@ -1,6 +1,6 @@
 const validationCodes = require('./validation-codes')
 const CHECKSUM_INDEX = 8
-const SUCCESS_CODE = 'SUCCESS'
+const SUCCESS_CODE = `SUCCESS`
 const weight = Object.freeze([ 8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2 ])
 const transliterateMap = Object.freeze({
 	//I, O, & Q are invalid
@@ -8,6 +8,10 @@ const transliterateMap = Object.freeze({
 })
 
 function makeValueMap(vin) {
+	if (vin.length !== 17) {
+		throw `INVALID_LENGTH`
+	}
+
 	return vin.map((character, index) => {
 		if (index === CHECKSUM_INDEX) {
 			return 0
@@ -22,24 +26,22 @@ function makeValueMap(vin) {
 }
 
 function checkChecksum(value, checksumCharacter) {
-	const sum = value
-		.map((val, index) => val * weight[index])
-		.reduce((sum, val) => sum + val, 0)
+	const sum = value.reduce((sum, val, index) => sum + val * weight[index], 0)
 
 	let derivedChecksumCharacter = sum % 11
 
 	if (derivedChecksumCharacter == 10) {
-		derivedChecksumCharacter = 'X'
+		derivedChecksumCharacter = `X`
 	}
 
-	return derivedChecksumCharacter == checksumCharacter ? SUCCESS_CODE : 'INVALID_CHECKSUM'
+	return derivedChecksumCharacter == checksumCharacter ? SUCCESS_CODE : `INVALID_CHECKSUM`
 }
 
 function validate(vin) {
 	let code = SUCCESS_CODE
 	let value = []
 
-	vin = vin.toUpperCase().split('')
+	vin = vin.trim().toUpperCase().split(``)
 
 	try {
 		value = makeValueMap(vin)

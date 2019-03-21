@@ -1,7 +1,17 @@
 # vinidator
 
+# Install
+
+```sh
+
+npm i vinidator
+
+```
+
+# API
+
 ```js
-const { validate, validateAndThrowOnInvalid } = require('vin-validator')
+const { validate, validateAndThrowOnInvalid } = require('vinidator')
 
 validate('1HTMMAANX4H670946') // { isValid: true, code: 'SUCCESS', message: 'VIN is valid' }
 

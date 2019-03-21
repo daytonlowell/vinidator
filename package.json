@@ -1,5 +1,5 @@
 {
-  "name": "vin-validator",
+  "name": "vinidator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -22,6 +22,6 @@
     "tape-catch": "^1.0.6"
   },
   "bugs": {
-    "url": "https://github.com/daytonlowell/vin-validator/issues"
+    "url": "https://github.com/daytonlowell/vinidator/issues"
   }
 }

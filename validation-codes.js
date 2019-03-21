@@ -12,6 +12,6 @@ module.exports = {
 	SUCCESS: {
 		isValid: true,
 		code: 'SUCCESS',
-		message: 'VIN decoded successfully',
+		message: 'VIN is valid',
 	},
 }

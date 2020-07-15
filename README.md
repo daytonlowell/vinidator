@@ -1,4 +1,5 @@
 # vinidator
+Validate a vehicle VIN
 
 # Install
 

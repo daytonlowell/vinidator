@@ -1,27 +1,26 @@
 {
-  "name": "vinidator",
-  "version": "1.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "tape test.js | faucet"
-  },
-  "keywords": [
-    "vin",
-    "validate",
-    "validator",
-    "vehicle",
-    "identification",
-    "number"
-  ],
-  "author": "daytonlowell",
-  "license": "WTFPL",
-  "devDependencies": {
-    "faucet": "0.0.1",
-    "tape": "^4.10.1",
-    "tape-catch": "^1.0.6"
-  },
-  "bugs": {
-    "url": "https://github.com/daytonlowell/vinidator/issues"
-  }
+	"name": "vinidator",
+	"version": "1.0.2",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "tape test.js"
+	},
+	"keywords": [
+		"vin",
+		"validate",
+		"validator",
+		"vehicle",
+		"identification",
+		"number"
+	],
+	"author": "daytonlowell",
+	"license": "WTFPL",
+	"devDependencies": {
+		"tape": "^4.13.3",
+		"tape-catch": "^1.0.6"
+	},
+	"bugs": {
+		"url": "https://github.com/daytonlowell/vinidator/issues"
+	}
 }

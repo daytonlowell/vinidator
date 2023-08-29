@@ -8,6 +8,7 @@ Validate a vehicle identification number(VIN)
 npm i vinidator
 
 ```
+> Only breaking change in version 2.0 was the switch to ESM
 
 # API
 

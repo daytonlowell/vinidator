@@ -15,18 +15,18 @@ function makeValueMap(vin: string[]): number[] {
 	return vin.map((character, index) => {
 		if (index === CHECKSUM_INDEX) {
 			return 0
-		} else {
-			if (!transliterateMap.hasOwnProperty(character)) { //TODO switch to Object.hasOwn eventually
-				throw CODES.INVALID_CHARACTER
-			}
-
+		} else if (Object.prototype.hasOwnProperty.call(transliterateMap, character)) {
 			return transliterateMap[character]
+		} else {
+			throw CODES.INVALID_CHARACTER
 		}
 	})
 }
 
+const isValidationCode = (code: unknown): code is CODES => Object.values(CODES).includes(code as CODES)
+
 function checkChecksum(value: number[], checksumCharacter: string) {
-	const sum = value.reduce((sum, val, index) => sum + val * weight[index], 0)
+	const sum = value.reduce((sum, val, index) => sum + (val * weight[index]), 0)
 
 	let derivedChecksumCharacter: string = (sum % 11).toString()
 
@@ -45,8 +45,10 @@ export function validate(vin: string) {
 
 	try {
 		value = makeValueMap(vinParts)
-	} catch (e: any) {
-		code = e
+	} catch (e) {
+		if (isValidationCode(e)) {
+			code = e
+		}
 	}
 
 	if (code !== CODES.SUCCESS) {
@@ -59,7 +61,7 @@ export function validate(vin: string) {
 export function validateAndThrowOnInvalid(vin: string) {
 	const validation = validate(vin)
 
-	if (validation && validation.isValid) {
+	if (validation?.isValid) {
 		return validation
 	} else {
 		throw new Error(validation.message)

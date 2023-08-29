@@ -2,10 +2,10 @@ const test = require('tape-catch')
 const { validate, validateAndThrowOnInvalid } = require('./index')
 const validationCodes = require('./validation-codes')
 
-const success = validationCodes['SUCCESS']
-const invalidCharacter = validationCodes['INVALID_CHARACTER']
-const invalidChecksum = validationCodes['INVALID_CHECKSUM']
-const invalidLength = validationCodes['INVALID_LENGTH']
+const success = validationCodes.SUCCESS
+const invalidCharacter = validationCodes.INVALID_CHARACTER
+const invalidChecksum = validationCodes.INVALID_CHECKSUM
+const invalidLength = validationCodes.INVALID_LENGTH
 
 test('no invalid characters in vin', t => {
 	t.deepEqual(validate('1mIag12cx7m055891'), invalidCharacter) //I is invalid

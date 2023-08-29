@@ -2,9 +2,17 @@
 	"name": "vinidator",
 	"version": "1.0.2",
 	"description": "",
-	"main": "index.js",
+	"main": "dist/index.js",
+	"type": "module",
+	"files": [
+		"dist/*.*"
+	],
 	"scripts": {
-		"test": "tape test.js"
+		"clean": "rimraf ./dist",
+		"build": "npm run clean && tsc",
+		"watch": "npm run clean && tsc -w",
+		"test": "npm run build && node test.mjs",
+		"prepublishOnly": "npm run test"
 	},
 	"keywords": [
 		"vin",
@@ -17,8 +25,10 @@
 	"author": "daytonlowell",
 	"license": "WTFPL",
 	"devDependencies": {
+		"rimraf": "^5.0.1",
 		"tape": "^4.13.3",
-		"tape-catch": "^1.0.6"
+		"tape-catch": "^1.0.6",
+		"typescript": "^5.2.2"
 	},
 	"bugs": {
 		"url": "https://github.com/daytonlowell/vinidator/issues"

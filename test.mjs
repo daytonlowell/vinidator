@@ -1,6 +1,6 @@
-const test = require('tape-catch')
-const { validate, validateAndThrowOnInvalid } = require('./index')
-const validationCodes = require('./validation-codes')
+import test from 'tape-catch'
+import { validate, validateAndThrowOnInvalid } from './dist/index.js'
+import validationCodes from './dist/validation-codes.js'
 
 const success = validationCodes.SUCCESS
 const invalidCharacter = validationCodes.INVALID_CHARACTER

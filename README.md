@@ -12,7 +12,7 @@ npm i vinidator
 # API
 
 ```js
-const { validate, validateAndThrowOnInvalid } = require('vinidator')
+import { validate, validateAndThrowOnInvalid } from 'vinidator'
 
 validate('1HTMMAANX4H670946') // { isValid: true, code: 'SUCCESS', message: 'VIN is valid' }
 
